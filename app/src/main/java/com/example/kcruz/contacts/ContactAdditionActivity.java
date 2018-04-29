@@ -3,11 +3,11 @@ package com.example.kcruz.contacts;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ContactEditActivity extends AppCompatActivity {
+public class ContactAdditionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_edit);
+        setContentView(R.layout.activity_contact_addition);
     }
 }

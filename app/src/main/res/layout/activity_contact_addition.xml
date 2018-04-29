@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/orange_purple"
     android:orientation="vertical"
-    tools:context=".ContactEditActivity">
+    tools:context=".ContactAdditionActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
