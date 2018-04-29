@@ -15,14 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ContactList extends ListFragment implements AdapterView.OnItemClickListener {
+import static com.example.kcruz.contacts.R.id.viewer;
+
+public class ContactFragmentList extends ListFragment implements AdapterView.OnItemClickListener {
 
     Contact contact;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //agregando elementos visuales a la vista
-        View view = inflater.inflate(R.layout.list_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_contact, container, false);
         return view;
     }
 
@@ -30,8 +32,10 @@ public class ContactList extends ListFragment implements AdapterView.OnItemClick
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                R.array.firstName, android.R.layout.simple_list_item_1) {
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.firstName, android.R.layout.simple_list_item_1);
+        /*{
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -39,13 +43,13 @@ public class ContactList extends ListFragment implements AdapterView.OnItemClick
                 text.setTextColor(Color.WHITE);
                 return view;
             }
-        };
+        };*/
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
         //se envia a objeto el contenido en la posicion i segun click
         contact = new Contact(getResources().getStringArray(R.array.firstName)[i],
                 getResources().getStringArray(R.array.lastName)[i],getResources().getStringArray(R.array.number)[i],
@@ -59,18 +63,17 @@ public class ContactList extends ListFragment implements AdapterView.OnItemClick
             newIntent.setAction(Intent.ACTION_SEND);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
-        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){ Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
-            FragmentViewer frag = new FragmentViewer();
+            ContactViewerFragment frag = new ContactViewerFragment();
             frag.setArguments(bundle);
 
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.replace(R.id.viewer, frag);
+            fragmentTransaction.replace(R.id.viewer,frag);
             fragmentTransaction.commit();
-        }*/
+        }
 
 
     }
