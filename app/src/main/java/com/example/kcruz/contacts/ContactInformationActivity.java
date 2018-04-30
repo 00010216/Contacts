@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ContactInformationActivity extends AppCompatActivity {
 
-    TextView firstName, lastName, number;
+    TextView firstName, lastName, number, contactName;
     ImageView contactImage, shareImage; //declaracion de variables
     String shareContactInformation;
 
@@ -24,6 +24,7 @@ public class ContactInformationActivity extends AppCompatActivity {
         lastName = findViewById(R.id.last_name);
         number = findViewById(R.id.number);
         contactImage = findViewById(R.id.contact_image);
+        contactName = findViewById(R.id.contact_name);
         Bundle bundle = getIntent().getExtras();
         Contact contact;
 
@@ -35,18 +36,20 @@ public class ContactInformationActivity extends AppCompatActivity {
             lastName.setText(contact.getLastName());
             number.setText(contact.getNumber());
             contactImage.setImageResource(contact.getImage());
-            shareContactInformation = contact.toString();
-         }
+            contactName.setText(contact.contactName());
+
+            shareContactInformation = contact.toString(); //obteniendo informacion de contacto para compartir
+        }
 
         //setLinks();
         shareImage = findViewById(R.id.img_share);
-        shareImage.setOnClickListener(share);
+        shareImage.setOnClickListener(share);//indicando a donde estara la imagen que tendra la funcionalidad del share
     }
 
     View.OnClickListener share = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            shareContact();
+            shareContact(); //dandole funcionalidad a imagen de share
         }
     };
 
@@ -62,7 +65,7 @@ public class ContactInformationActivity extends AppCompatActivity {
 
         shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); //permiso de lectura
 
-        Intent chooser = Intent.createChooser(shareIntent, "Share");
+        Intent chooser = Intent.createChooser(shareIntent, getString(R.string.share_contact));
 
         if (shareIntent.resolveActivity(getPackageManager()) != null){
             startActivity(chooser); //sendIntent

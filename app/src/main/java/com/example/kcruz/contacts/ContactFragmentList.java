@@ -29,7 +29,7 @@ public class ContactFragmentList extends ListFragment implements AdapterView.OnI
         return view;
     }
 
-//Debe recibir valores del celular y de los ingresados por usuario
+    //Debe recibir valores del celular y de los ingresados por usuario
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

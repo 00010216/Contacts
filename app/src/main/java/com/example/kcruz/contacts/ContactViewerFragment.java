@@ -1,7 +1,5 @@
 package com.example.kcruz.contacts;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 
 
 public class ContactViewerFragment extends Fragment {
-    TextView firstName, lastName, number;
+    TextView firstName, lastName, number,contactName;
     ImageView contactImage; //delcaracion de variables
 
     @Override
@@ -25,6 +23,7 @@ public class ContactViewerFragment extends Fragment {
         lastName = view.findViewById(R.id.last_name);
         number = view.findViewById(R.id.number);
         contactImage = view.findViewById(R.id.contact_image);
+        contactName = view.findViewById(R.id.contact_name);
         Bundle bundle = this.getArguments();
         Contact contact;
 
@@ -37,6 +36,7 @@ public class ContactViewerFragment extends Fragment {
             lastName.setText(contact.getLastName());
             number.setText(contact.getNumber());
             contactImage.setImageResource(contact.getImage());
+            contactName.setText(contact.contactName());
         }
 
         return view;
