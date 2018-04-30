@@ -2,9 +2,9 @@
     <string name="app_name">Contacts</string>
 
     <string-array name="firstName">
-        <item>Sun</item>
+        <item>Karla</item>
         <item>Mercury</item>
-        <item>Venus</item>
+        <item>Kevin</item>
         <item>Earth</item>
         <item>Mars</item>
         <item>Jupiter</item>
@@ -23,9 +23,9 @@
     </string-array>
 
     <string-array name="lastName">
-        <item>Sun</item>
+        <item>Cruz</item>
         <item>Mercury</item>
-        <item>Venus</item>
+        <item>Velasquez</item>
         <item>Earth</item>
         <item>Mars</item>
         <item>Jupiter</item>
@@ -65,10 +65,10 @@
     </string-array>
 
     <string-array name="image">
-        <item>@drawable/mercury</item>
-        <item>@drawable/mercury</item>
-        <item>@drawable/mercury</item>
-        <item>@drawable/mercury</item>
+        <item>@drawable/cara</item>
+        <item>@drawable/cara</item>
+        <item>@drawable/kev</item>
+        <item>@drawable/kev</item>
         <item>@drawable/mercury</item>
         <item>@drawable/mercury</item>
         <item>@drawable/mercury</item>
@@ -87,4 +87,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="space"> </string>
+    <string name="share_contact">Share contact</string>
 </resources>
