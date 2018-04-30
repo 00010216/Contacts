@@ -11,6 +11,12 @@ public class Contact implements Parcelable {
     //private String birthDate;
     //private String email;
 
+    public Contact(){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.number = number;
+    }
+
     public Contact(String firstName, String lastName, String number, int image){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,6 +32,12 @@ public class Contact implements Parcelable {
         image = in.readInt();
         //birthDate = in.readString();
        // email = in.readString();
+    }
+
+    public Contact(String firstName, String lastName, String number) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.number = number;
     }
 
     @Override
@@ -104,5 +116,8 @@ public class Contact implements Parcelable {
         this.email = email;
     }*/
 
-
+    @Override
+    public String toString() { //HACER IF PARA VER LENGUAJE, DEPENDE SI TIENE O NO ESOS CONTENIDO
+        return "Name:" + this.getFirstName() + "\n Last Name:" + this.getLastName() + "\n Number:" + this.getNumber();
+    }
 }
