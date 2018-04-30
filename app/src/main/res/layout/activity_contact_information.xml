@@ -8,10 +8,35 @@
     android:orientation="vertical"
     tools:context=".ContactInformationActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:id="@+id/rel_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_more_vert_white_48dp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:padding="@dimen/text_margin"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -29,23 +54,39 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
+        android:background="#2ce1e0e0"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="@dimen/text_margin"
+            android:background="@drawable/custom_rectangle_shape"
+            android:padding="16dp"
+            android:text="sdad"
             android:textSize="14sp"
             />
         <TextView
             android:id="@+id/last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/text_margin"
+            android:background="@drawable/custom_rectangle_shape"
+            android:padding="16dp"
+            android:text="asda"
+            android:layout_marginVertical="4dp"
             android:textSize="14sp"/>
         <TextView
             android:id="@+id/number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="@dimen/text_margin"
+            android:background="@drawable/custom_rectangle_shape"
+            android:padding="16dp"
             android:textSize="14sp"/>
 
 
