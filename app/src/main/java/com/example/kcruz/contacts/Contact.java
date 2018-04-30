@@ -120,4 +120,8 @@ public class Contact implements Parcelable {
     public String toString() { //HACER IF PARA VER LENGUAJE, DEPENDE SI TIENE O NO ESOS CONTENIDO
         return "Name:" + this.getFirstName() + "\n Last Name:" + this.getLastName() + "\n Number:" + this.getNumber();
     }
+
+    public  String contactName (){
+        return this.getFirstName() + " " + this.getLastName();
+    }
 }
