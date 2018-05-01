@@ -118,7 +118,7 @@ public class Contact implements Parcelable {
 
     @Override
     public String toString() { //HACER IF PARA VER LENGUAJE, DEPENDE SI TIENE O NO ESOS CONTENIDO
-        return "Name:" + this.getFirstName() + "\n Last Name:" + this.getLastName() + "\n Number:" + this.getNumber();
+        return "Name:" + this.getFirstName() + "\n Last Name:" + this.getLastName() + "\n Number:" + this.getNumber()+"";
     }
 
     //metodo para representar nombre de contacto en la vista de informacion de contacto activity_contact_information
