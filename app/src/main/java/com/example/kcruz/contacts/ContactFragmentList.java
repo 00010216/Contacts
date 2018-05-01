@@ -1,22 +1,18 @@
 package com.example.kcruz.contacts;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.example.kcruz.contacts.R.id.viewer;
 
 public class ContactFragmentList extends ListFragment implements AdapterView.OnItemClickListener {
 
@@ -60,22 +56,28 @@ public class ContactFragmentList extends ListFragment implements AdapterView.OnI
         bundle.putParcelable("KEY", contact); //manda identificador de bundle
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            //Identificando si el dispositivo es de size large envia la informacion al fragmento para modo de tablet
+            if(getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
+                Fragment frag = new ContactViewerFragment();
+                frag.setArguments(bundle);
+
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction.replace(R.id.viewer,frag);
+                fragmentTransaction.commit();
+            }else{
+                //Envia informacion del contacto al activity respectivo para vista de pantallas mas pequeñas
+                Intent newIntent = new Intent(getActivity().getApplicationContext(), ContactInformationActivity.class);
+                newIntent.setAction(Intent.ACTION_SEND);
+                newIntent.putExtras(bundle);
+                startActivity(newIntent);
+            }
+        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){ Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
             Intent newIntent = new Intent(getActivity().getApplicationContext(), ContactInformationActivity.class);
             newIntent.setAction(Intent.ACTION_SEND);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
-        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){ Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
-
-            Fragment frag = new ContactViewerFragment();
-            frag.setArguments(bundle);
-
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            fragmentTransaction.replace(R.id.viewer,frag);
-            fragmentTransaction.commit();
         }
-
-
     }
 }
