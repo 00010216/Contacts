@@ -26,9 +26,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/add_contact"
+                android:src="@drawable/ic_search_white_48dp"
+                android:layout_toLeftOf="@+id/add_contact" />
+
+            <ImageView
+                android:id="@+id/add_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_toStartOf="@+id/options"
                 android:layout_toLeftOf="@id/options"
-                android:src="@drawable/ic_more_vert_white_48dp" />
+                android:src="@drawable/ic_plus_white" />
 
             <ImageView
                 android:id="@+id/options"
