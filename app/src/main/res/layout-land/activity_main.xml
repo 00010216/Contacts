@@ -15,19 +15,38 @@
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
         <RelativeLayout
             android:id="@+id/rel_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_centerVertical="true"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <ImageView
                 android:id="@+id/search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/add_contact"
+                android:src="@drawable/ic_search_white_48dp"
+                android:layout_toLeftOf="@+id/add_contact" />
+
+            <ImageView
+                android:id="@+id/add_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_toStartOf="@+id/options"
                 android:layout_toLeftOf="@id/options"
-                android:src="@drawable/ic_more_vert_white_48dp" />
+                android:src="@drawable/ic_plus_white" />
 
             <ImageView
                 android:id="@+id/options"
@@ -39,24 +58,6 @@
                 android:src="@drawable/ic_more_vert_white_48dp" />
 
         </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/app_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
