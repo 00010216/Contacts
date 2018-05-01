@@ -1,88 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     tools:context=".ContactViewerFragment">
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:padding="@dimen/text_margin"
-        android:orientation="vertical">
+        android:text="@string/hello_blank_fragment" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
-            <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/contact_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="16dp"
-                android:src="@drawable/mercury" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <TextView
-                android:id="@+id/contact_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textSize="24sp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
-
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/first_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="@dimen/text_margin"
-            android:background="@drawable/custom_rectangle_shape"
-            android:padding="16dp"
-            android:text="sdad"
-            android:textSize="14sp"
-            />
-        <TextView
-            android:id="@+id/last_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/text_margin"
-            android:background="@drawable/custom_rectangle_shape"
-            android:padding="16dp"
-            android:text="asda"
-            android:layout_marginVertical="4dp"
-            android:textSize="14sp"/>
-        <TextView
-            android:id="@+id/number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginHorizontal="@dimen/text_margin"
-            android:background="@drawable/custom_rectangle_shape"
-            android:padding="16dp"
-            android:textSize="14sp"/>
-
-
-    </LinearLayout>
-</LinearLayout>
+</FrameLayout>

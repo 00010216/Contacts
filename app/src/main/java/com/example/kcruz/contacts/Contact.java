@@ -31,7 +31,7 @@ public class Contact implements Parcelable {
         number = in.readString();
         image = in.readInt();
         //birthDate = in.readString();
-       // email = in.readString();
+        // email = in.readString();
     }
 
     public Contact(String firstName, String lastName, String number) {
@@ -121,6 +121,7 @@ public class Contact implements Parcelable {
         return "Name:" + this.getFirstName() + "\n Last Name:" + this.getLastName() + "\n Number:" + this.getNumber();
     }
 
+    //metodo para representar nombre de contacto en la vista de informacion de contacto activity_contact_information
     public  String contactName (){
         return this.getFirstName() + " " + this.getLastName();
     }
