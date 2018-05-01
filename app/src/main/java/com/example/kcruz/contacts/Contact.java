@@ -2,6 +2,7 @@ package com.example.kcruz.contacts;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.Editable;
 
 public class Contact implements Parcelable {
     private String firstName;
