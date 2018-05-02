@@ -55,7 +55,24 @@ public class ContactFragmentList extends ListFragment implements AdapterView.OnI
         Bundle bundle = new Bundle(); //procesa la info que se enviara a traves del intent
         bundle.putParcelable("KEY", contact); //manda identificador de bundle
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+        if(getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
+            Fragment frag = new ContactViewerFragment();
+            frag.setArguments(bundle);
+
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            fragmentTransaction.replace(R.id.viewer,frag);
+            fragmentTransaction.commit();
+        }else {
+            Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+            Intent newIntent = new Intent(getActivity().getApplicationContext(), ContactInformationActivity.class);
+            newIntent.setAction(Intent.ACTION_SEND);
+            newIntent.putExtras(bundle);
+            startActivity(newIntent);
+        }
+
+        /*if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             //Identificando si el dispositivo es de size large envia la informacion al fragmento para modo de tablet
             if(getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
                 Fragment frag = new ContactViewerFragment();
@@ -78,6 +95,6 @@ public class ContactFragmentList extends ListFragment implements AdapterView.OnI
             newIntent.setAction(Intent.ACTION_SEND);
             newIntent.putExtras(bundle);
             startActivity(newIntent);
-        }
+        }*/
     }
 }
