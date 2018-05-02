@@ -21,6 +21,24 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_arrow_back_white_48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/img_back"
+                android:text="Contacts"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <ImageView
                 android:id="@+id/img_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,7 +85,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#fff"
-                    android:textStyle="bold"
                     android:textAlignment="center"
                     android:text="Prueba Nombre"
                     android:textSize="24sp"/>
