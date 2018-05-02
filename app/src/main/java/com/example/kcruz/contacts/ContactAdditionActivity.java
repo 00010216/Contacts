@@ -1,6 +1,10 @@
 package com.example.kcruz.contacts;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -36,24 +40,11 @@ public class ContactAdditionActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.txt_done:
-                //obtener informacion,(guardar)agregarla a arreglo de contactos, abrir pantalla con info de nuevo contacto
-                goToActivity(v);
-                break;
-            case R.id.txt_cancel:
-                //no guardar nada y regresar a la pantalla de inicio
-                goToActivity(v);
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void goToActivity(View view){
-        switch (view.getId()){
-            case R.id.txt_done:
+                //obtener informacion,(guardar)agregarla a arreglo de contactos
                 sendNewContactInformation(getNewContactInformation());
                 break;
             case R.id.txt_cancel:
+                //no guardar nada y regresar a la pantalla de inicio
                 //regresar a actividad principal MainActivity
                 Intent intentBackToMain = new Intent(this, MainActivity.class);
                 startActivity(intentBackToMain); //iniciando la otra actividad
@@ -64,6 +55,7 @@ public class ContactAdditionActivity extends AppCompatActivity implements View.O
     }
 
     public Contact getNewContactInformation(){
+        //obtiene informacion del nuevo contacto
         newContact = new Contact(firstName.getText().toString(),lastName.getText().toString(),contactNumber.getText().toString());
         Toast.makeText(this, "Item: " + newContact.toString(), Toast.LENGTH_SHORT).show();
         return newContact;
@@ -78,5 +70,31 @@ public class ContactAdditionActivity extends AppCompatActivity implements View.O
         intentNewContact.putExtras(bundle);
         startActivity(intentNewContact); //iniciando la otra actividad
 
+        /*if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            //Identificando si el dispositivo es de size large envia la informacion al fragmento para modo de tablet
+            /*if(getResources().getConfiguration().isLayoutSizeAtLeast(Configuration.SCREENLAYOUT_SIZE_LARGE)) {
+                Fragment frag = new ContactViewerFragment();
+                frag.setArguments(bundle);
+
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction.replace(R.id.viewer,frag);
+                fragmentTransaction.commit();
+            }else{
+                //Envia informacion del contacto al activity respectivo para vista de pantallas mas pequeñas
+                Intent intentNewContact = new Intent(this, ContactInformationActivity.class);
+                intentNewContact.setAction(Intent.ACTION_SEND);
+                intentNewContact.putExtras(bundle);
+                startActivity(intentNewContact); //iniciando la otra actividad
+            }
+        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){ Toast.makeText(getActivity(), "Item: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+            Intent intentNewContact = new Intent(this, ContactInformationActivity.class);
+            intentNewContact.setAction(Intent.ACTION_SEND);
+            intentNewContact.putExtras(bundle);
+            startActivity(intentNewContact); //iniciando la otra actividad
+        }*/
+
     }
 }
+
