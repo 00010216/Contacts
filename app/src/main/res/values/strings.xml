@@ -4,7 +4,7 @@
     <string-array name="firstName">
         <item>Karla</item>
         <item>Mercury</item>
-        <item>Kevin</item>
+        <item>Karla</item>
         <item>Earth</item>
         <item>Mars</item>
         <item>Jupiter</item>
@@ -25,7 +25,7 @@
     <string-array name="lastName">
         <item>Cruz</item>
         <item>Mercury</item>
-        <item>Velasquez</item>
+        <item>Cruz</item>
         <item>Earth</item>
         <item>Mars</item>
         <item>Jupiter</item>
@@ -67,8 +67,8 @@
     <string-array name="image">
         <item>@drawable/cara</item>
         <item>@drawable/cara</item>
-        <item>@drawable/kev</item>
-        <item>@drawable/kev</item>
+        <item>@drawable/cara</item>
+        <item>@drawable/cara</item>
         <item>@drawable/mercury</item>
         <item>@drawable/mercury</item>
         <item>@drawable/mercury</item>
