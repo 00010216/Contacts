@@ -22,9 +22,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/cancel"
+                android:id="@+id/txt_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textIsSelectable="true"
                 android:text="Cancel"
                 android:textColor="#fff"
                 android:textSize="20sp" />
@@ -39,6 +40,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/txt_done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -46,6 +48,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:textIsSelectable="true"
                 android:text="Done"
                 android:textColor="#fff"
                 android:textSize="20sp" />
@@ -53,4 +56,5 @@
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
+    <include layout="@layout/content_scrolling_contact_addition"/>
 </LinearLayout>
