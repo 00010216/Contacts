@@ -1,5 +1,6 @@
 package com.example.kcruz.contacts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,7 +13,8 @@ import android.widget.Toast;
 
 public class ContactViewerFragment extends Fragment {
     TextView firstName, lastName, number,contactName;
-    ImageView contactImage; //declaracion de variables
+    ImageView contactImage, shareImage; //declaracion de variables
+    String shareContactInformation;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,8 +39,34 @@ public class ContactViewerFragment extends Fragment {
             number.setText(contact.getNumber());
             contactImage.setImageResource(contact.getImage());
             contactName.setText(contact.contactName());
+
+            shareContactInformation = contact.toString(); //obteniendo informacion de contacto para compartir
         }
+        shareImage = view.findViewById(R.id.img_share);
+        shareImage.setOnClickListener(share);//indicando a donde estara la imagen que tendra la funcionalidad del share
 
         return view;
+    }
+
+    View.OnClickListener share = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            shareContact(); //dandole funcionalidad a imagen de share
+        }
+    };
+
+    public  void shareContact(){
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareContactInformation);
+        shareIntent.setType("text/plain");
+
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); //permiso de lectura
+
+        Intent chooser = Intent.createChooser(shareIntent, getString(R.string.share_contact));
+
+        if (shareIntent.resolveActivity(getContext().getPackageManager()) != null){
+            startActivity(chooser); //sendIntent
+        }
     }
 }
