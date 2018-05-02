@@ -34,18 +34,23 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
                     android:hint="First Name" />
 
                 <EditText
+                    android:id="@+id/last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
                     android:hint="Last Name" />
                 <EditText
+                    android:id="@+id/company_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Last Name" />
+                    android:hint="Company" />
             </LinearLayout>
 
         </LinearLayout>
@@ -53,18 +58,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Phone" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="First Name"/>
+                android:inputType="textEmailAddress"
+                android:hint="Email"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"/>
+                android:inputType="date"
+                android:hint="Birthday"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
