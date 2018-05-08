@@ -1,18 +1,26 @@
-package com.example.kcruz.contacts;
+package com.example.kcruz.contacts.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kcruz.contacts.R;
+import com.example.kcruz.contacts.activity.ContactInformationActivity;
+import com.example.kcruz.contacts.beans.Contact;
 
 public class ContactViewerFragment extends Fragment {
-    TextView firstName, lastName, number,contactName;
+    TextView firstName, lastName, number,contactName, email, birthday;
     ImageView contactImage, shareImage; //declaracion de variables
     String shareContactInformation;
 
@@ -36,9 +44,9 @@ public class ContactViewerFragment extends Fragment {
             //coloca la info guardada en el objeto y la coloca en el view respectivo
             firstName.setText(contact.getFirstName());
             lastName.setText(contact.getLastName());
-            number.setText(contact.getNumber());
-            contactImage.setImageResource(contact.getImage());
-            contactName.setText(contact.contactName());
+            number.setText(contact.getNumber1());
+            //contactImage.setImageResource(contact.getImage());
+            contactName.setText(contact.getContactName());
 
             shareContactInformation = contact.toString(); //obteniendo informacion de contacto para compartir
         }
@@ -69,4 +77,23 @@ public class ContactViewerFragment extends Fragment {
             startActivity(chooser); //sendIntent
         }
     }
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.contact_addition,menu);
+        MenuItem hideitem1 = menu.findItem(R.id.app_bar_search);
+        MenuItem hideitem2 = menu.findItem(R.id.menu_favorites);
+        MenuItem hideitem3 = menu.findItem(R.id.img_add_contact);
+        MenuItem hideitem4 = menu.findItem(R.id.import_contacts);
+        hideitem1.setVisible(false);hideitem2.setVisible(false);hideitem3.setVisible(false);hideitem4.setVisible(false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

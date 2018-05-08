@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/img_add_contact"
+        android:icon="@drawable/ic_edit_white_24dp"
+        app:showAsAction="always"
+        android:title="@string/add_contact"/>
+    <item
+        android:id="@+id/menu_favorites"
+        android:icon="@drawable/ic_fav_border"
+        android:orderInCategory="200"
+        android:title="@string/favorites"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_delete"
+        android:orderInCategory="200"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_share"
+        android:orderInCategory="200"
+        android:title="Share"
+        app:showAsAction="ifRoom" />
+</menu>

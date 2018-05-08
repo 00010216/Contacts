@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Contactos</string>
+    <string name="favorites">Favoritos</string>
+    <string name="share_contact">Compartir contacto</string>
+    <string name="add_favr">Agregado a Favoritos</string>
+    <string name="remove_favr">Eliminado de Favoritos</string>
+    <string name="no_favorites_items">Sin Favoritos</string>
+    <string name="no_favorites_msg">Mantén presionado un item para agregarlo a favoritos.</string>
+    <string name="favorites_remove_msg">Mantén presionado un item para agregarlo a favoritos.</string>
+    <string name="add_contact">Añadir contacto</string>
+    <string name="import_contact">Importar</string>
+    <string name="error_permission_read_contacts">El acceso a contactos es necesario para mostrar el directorio telefónico personalizado</string>
+    <string name="error_permission_call_phone">Acceso de hacer llamada es necesario para que no tengas que dejar el app</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_enable_in_settings">Habilitar en ajustes</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="done">Listo</string>
+    <string name="new_contact">Contacto nuevo</string>
+    <string name="no_contact">No se han agregado \n contactos</string>
+
+    <string-array name="phone_options_array">
+        <item>Móvil</item>
+        <item>Casa</item>
+        <item>Trabajo</item>
+        <item>Fax del trabajo</item>
+        <item>Fax de casa</item>
+        <item>Biper</item>
+        <item>Otro</item>
+    </string-array>
+    <string-array name="email_options_array">
+        <item>Casa</item>
+        <item>Trabajo</item>
+        <item>Otro</item>
+        <item>Móvil</item>
+    </string-array>
+</resources>

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ContactAdditionActivity"
-    tools:showIn="@layout/activity_contact_addition">
+    tools:context=".fragment.ContactAdditionFragment"
+    tools:showIn="@layout/fragment_contact_addition">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="4dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,12 +32,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:paddingLeft="8dp"
                 android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:textColorHint="@color/hintColor"
                     android:inputType="textPersonName"
                     android:hint="First Name" />
 
@@ -44,12 +48,16 @@
                     android:id="@+id/last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/hintColor"
                     android:inputType="textPersonName"
+                    android:paddingTop="8dp"
                     android:hint="Last Name" />
                 <EditText
                     android:id="@+id/company_name"
                     android:layout_width="match_parent"
+                    android:textColorHint="@color/hintColor"
                     android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
                     android:hint="Company" />
             </LinearLayout>
 
@@ -57,76 +65,49 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="4dp">
 
             <EditText
                 android:id="@+id/number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
+                android:padding="@dimen/text_margin"
+                android:textColorHint="@color/hintColor"
                 android:hint="Phone" />
+            <Spinner
+                android:id="@+id/phone_options_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:textColorHint="@color/hintColor"
+                android:padding="@dimen/text_margin"
                 android:hint="Email"/>
+            <Spinner
+                android:id="@+id/email_options_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
             <EditText
+                android:id="@+id/birthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColorHint="@color/hintColor"
                 android:inputType="date"
+                android:padding="@dimen/text_margin"
                 android:hint="Birthday"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Last Name" />
+           <!-- <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="right|center"
+                android:background="@drawable/ic_erase"
+                android:visibility="gone"/>-->
 
         </LinearLayout>
 
